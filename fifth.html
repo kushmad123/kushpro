@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=200px, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="fifth.css">
+<body>
+    
+    
+    <form onsubmit="return myfun()">
+        
+            <div class="form">
+            <h1>SIGN IN</h1>
+            <label for="">User name or Email:</label> <br><input type="text" class="t"><br><br>
+            <label for="">Password:</label> <br><input type="password" id="id1" class="pass"><br>
+            <span id="msg1" style="color: red;"></span><br><br>
+           
+           <input type="submit" onclick="return myfun();" value="LOG IN" class="sub">
+           
+           
+            </div>
+       
+    </form>
+
+</body>
+<script>
+    function myfun() {
+        var a = document.getElementById("id1").value;
+       
+        if (a == "") {
+            document.getElementById("msg1").innerHTML = "**please fill password**";
+            alert("fill password")
+            return false;
+        }
+        else if (a.length > 15) {
+            document.getElementById("msg1").innerHTML = "**please fill password**";
+            alert("fill password")
+            return false;
+        }
+        else if (a.length < 7) {
+            document.getElementById("msg1").innerHTML = "**password must have atleast 7 character**";
+            alert("password must have atleast 7 character")
+            return false;
+        }
+        else if ((a.search(/[a-z]+/) == -1)) {
+            document.getElementById("msg1").innerHTML = "**password must have alphabate**";
+
+            alert("password must have alphabate");
+            return false;
+
+        }
+        
+        
+        else {
+            alert("success")
+            return true;
+        }
+
+    }
+</script>
+
+</html>

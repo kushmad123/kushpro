@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=200px, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="fourth.css">
+<body>
+    
+    <script>
+        function myfun() {
+            var a = document.getElementById("id1").value;
+            var b = document.getElementById("id2").value;
+            if (a == "") {
+                document.getElementById("msg1").innerHTML = "**please fill password**";
+                alert("fill password")
+                return false;
+            }
+            else if (a.length > 15) {
+                document.getElementById("msg1").innerHTML = "**please fill password**";
+                alert("fill password")
+                return false;
+            }
+            else if (a.length < 7) {
+                document.getElementById("msg1").innerHTML = "**password must have atleast 7 character**";
+                alert("password must have atleast 7 character")
+                return false;
+            }
+            else if ((a.search(/[a-z]+/) == -1)) {
+                document.getElementById("msg1").innerHTML = "**password must have alphabate**";
+
+                alert("password must have alphabate");
+                return false;
+
+            }
+            else if (a != b) {
+                document.getElementById("msg2").innerHTML = "**Please confirm password**";
+                alert("not matched")
+                return false;
+            }
+            else {
+                alert("success")
+                return true;
+            }
+
+        }
+    </script>
+    <form onsubmit="return myfun()">
+        
+            <div class="form">
+            <h1>SIGN UP</h1>
+            <label for="">User name or Email:</label> <br><input type="text" class="t"><br><br>
+            <label for="">Password:</label> <br><input type="password" id="id1" class="pass"><br>
+            <span id="msg1" style="color: red;"></span><br><br>
+            <label for="">Confirm Password:</label><br><input type="password" id="id2" class="pas"><br>
+
+            <span id="msg2" style="color: red;"></span><br><br>
+           <input type="submit"  value="REGISTER" class="sub">
+           
+           
+            </div>
+       
+    </form>
+
+</body>
+
+</html>
