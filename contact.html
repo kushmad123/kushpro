@@ -14,17 +14,46 @@
         
    
     <section>
-    <h1 class="text-center">Contact Us</h1><form>
-        <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your First Name">
+    
+        <h1 class="text-center">Contact Us</h1><form>
+        <input class="form-input" type="text" name="name" id="fname" placeholder="Enter Your First Name">
         <input class="form-input" type="text" name="name" id="lname" placeholder="Enter Your last Name">
-        <input class="form-input" type="text" name="phone" id="phone" placeholder="Enter Your Phone">
-        <input class="form-input" type="email" name="email" id="email" placeholder="Enter Your email">
-         <textarea class="form-input" name="text" id="text" cols="30" rows="10" placeholder="Ellaborate your concern"></textarea>
-         <input type="button" class="form-input" onclick="validation();" value="Validate all detail " ><br>
-        <button class="btn btn-sm btn-dark" style="background-color: blue;">Submit</button>
+        <input class="form-input" type="text" name="phone" id="phone_no" placeholder="Enter Your Phone">
+        <input class="form-input" type="email" name="email" id="email" placeholder="Enter Your email"><BR>
+        <input type="button"  style="font-size: 20px;color: chocolate;" value ="Validation" onclick="Validation()" >
+        <button class="btn btn-sm btn-dark" style="background-color: blue;" >Submit</button>
     </section>
     </form>
     </div>
 </body>
+<script>
+    function Validation(){
+        var first_name=document.getElementById("fname").value;
+        var last_name=document.getElementById("lname").value;
+        var mobile_number=document.getElementById("phone_no").value;
+        var em=document.getElementById("email").value;
+        var regName =  /\d+$/g;
+        var regPhone = /^[1-9]{1}[0-9]{9}$/;
+        if(first_name=='' || regName.test(first_name)){
+            alert ('Enter valid first name');
+            return false;
+        }
+       else  if(last_name=='' ||regName.test(last_name)){
+            alert('Enter valid last name');
+            return false;
+        }
+      else if(mobile_number==''|| !regPhone.test(mobile_number)){
+           alert('Enter valid mobile number');
+           return false;
+        }
+      else  if(em.length==0){
+           alert('Email is null');
+           return false;}
+        else{
+            alert('All detail are validated');
+            return sucess;
+        }
+    }
+        </script>
 
 </html>
